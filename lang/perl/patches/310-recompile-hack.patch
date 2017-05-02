@@ -5,12 +5,12 @@ patch has been reported to work around that issue.
 
 --- a/Makefile.SH
 +++ b/Makefile.SH
-@@ -818,7 +818,7 @@ $(LIBPERL): $& $(obj) $(DYNALOADER) $(LI
+@@ -867,7 +867,7 @@ $(LIBPERL): $& $(perllib_objs) $(DYNALOA
  	true)
  		$spitshell >>$Makefile <<'!NO!SUBS!'
  	rm -f $@
--	$(LD) -o $@ $(SHRPLDFLAGS) $(obj) $(DYNALOADER) $(libs)
-+	$(CC) -o $@ $(SHRPLDFLAGS) $(obj) $(DYNALOADER) $(libs)
+-	$(LD) -o $@ $(SHRPLDFLAGS) $(perllib_objs) $(DYNALOADER) $(libs)
++	$(CC) -o $@ $(SHRPLDFLAGS) $(perllib_objs) $(DYNALOADER) $(libs)
  !NO!SUBS!
  		case "$osname" in
  		aix)
